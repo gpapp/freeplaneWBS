@@ -1,5 +1,5 @@
 ## What is this?
-This a Freeplane WBS addon
+This a Freeplane addon to support creation of Work Breakdown Structures (WBS)
 
 ## What does WBS addon do?
 It aggregates the costs and durations for a task tree. It also assigns codes to each task in a doted form for later reference.
