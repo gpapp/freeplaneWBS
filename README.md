@@ -14,10 +14,10 @@ Use the hotkey F7 (or the key you assigned to Tools/WBS/Create node) to create a
 Use the hotkey Shift+F7 (or the key you assigned to Tools/WBS/Edit node) to modify an existing WBS node, or convert a simple node to WBS. 
 
 ## How to use the template? 
-*Create a mindmap from the template 
-*Remove the example nodes 
+* Create a mindmap from the template 
+*  Remove the example nodes 
 *Add your own tasks using the editor 
-*When you are comfortable with the addon, remove the help nodes
+* When you are comfortable with the addon, remove the help nodes
 
 ## How to get rid of the calculations? 
 
@@ -29,10 +29,11 @@ You will not loose any of your actual data, only the dynamic calculation is remo
 
 * Input sanitization is not implemented, you are responsible to enter sensible numbers in the input forms 
 * The dynamic property management is quite slow in Freeplane. 
-* No export available yet 
+* No export available yet
+* Attribute order is not modifiable directly with APIs, once they are in wrong order they can only changed manually
 
 ## Notes 
-The template hides the technical attributes of the nodes, that are used for calculations. These attributes will be visible on maps not created from the template, and can be shown/hidden by using View/Node extensions/Attribute manager. 
+The template hides the technical attributes of the nodes, that are used for calculations. These attributes will be visible on maps not created from the template, and can be shown/hidden by using Edit/Node extensions/Attribute manager. 
 
 The concept behind the addon is one-project one map, there is no possibility to manage multiple disjunct projects in it simultaneously. 
 

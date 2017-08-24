@@ -4,5 +4,6 @@ import hu.itsphere.freeplanewbs.WBSHelper
 map.rootNode.children.each {
     WBSHelper.initWBS(it)
 }
-map.rootNode['Total cost']=WBSHelper.aggregateExpr('Total cost')
-map.rootNode['Total duration']=WBSHelper.aggregateExpr('Total duration')
+map.rootNode['Total work']=WBSHelper.aggregateExpr('Level work')
+map.rootNode['Total duration']=WBSHelper.aggregateExpr('Level duration')
+map.rootNode['Total cost']=WBSHelper.aggregateExpr('Level cost')

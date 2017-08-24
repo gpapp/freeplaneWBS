@@ -6,5 +6,6 @@ map.rootNode.children.each {
     WBSHelper.removeWBS(it)
 }
 
-map.rootNode.attributes.removeAll('Total cost')
+map.rootNode.attributes.removeAll('Total work')
 map.rootNode.attributes.removeAll('Total duration')
+map.rootNode.attributes.removeAll('Total cost')

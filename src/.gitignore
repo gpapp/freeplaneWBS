@@ -1,3 +1,4 @@
-srcversion.properties
+version.properties
 WBS.addon.mm.bak
-WBS-v(.*).addon.mm
+WBS-v*.addon.mm
+

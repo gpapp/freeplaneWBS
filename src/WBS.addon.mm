@@ -1,6 +1,6 @@
 <map version="freeplane 1.5.9">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="WBS" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1503424688502" LINK="https://www.itworks.hu/portfolio/freeplane-wbs/" BACKGROUND_COLOR="#97c7dc">
+<node TEXT="WBS" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1503597306497" LINK="https://www.itworks.hu/portfolio/freeplane-wbs/" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="MapStyle">
     <properties fit_to_viewport="false;" show_icon_for_attributes="true" show_note_icons="true"/>
@@ -58,7 +58,7 @@
 </hook>
 <attribute_layout NAME_WIDTH="129.74999613314878 pt" VALUE_WIDTH="134.24999599903833 pt"/>
 <attribute NAME="name" VALUE="freeplaneWBS"/>
-<attribute NAME="version" VALUE="v1.0.0"/>
+<attribute NAME="version" VALUE="v1.1.0"/>
 <attribute NAME="author" VALUE="Gergely Papp"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="1.5.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -229,7 +229,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="en" ID="ID_590286510" CREATED="1323057303773" MODIFIED="1503414744308">
+<node TEXT="en" ID="ID_590286510" CREATED="1323057303773" MODIFIED="1503598619438">
 <attribute_layout NAME_WIDTH="221.99999338388463 pt" VALUE_WIDTH="326.99999025464086 pt"/>
 <attribute NAME="main_menu_scripting/WBS" VALUE="WBS"/>
 <attribute NAME="addons.${name}" VALUE="WBS"/>
@@ -239,6 +239,7 @@
 <attribute NAME="addon.${name}.editTask" VALUE="Edit selected WBS task"/>
 <attribute NAME="addon.${name}.taskeditor.dialogtitle" VALUE="WBS task editor"/>
 <attribute NAME="addon.${name}.taskeditor.name" VALUE="Task name"/>
+<attribute NAME="addon.${name}.taskeditor.work" VALUE="Work"/>
 <attribute NAME="addon.${name}.taskeditor.cost" VALUE="Cost"/>
 <attribute NAME="addon.${name}.taskeditor.duration" VALUE="Duration"/>
 <attribute NAME="addon.${name}.taskeditor.cancel" VALUE="Cancel"/>

@@ -19,6 +19,10 @@ class WBSHelper {
         '=children.sum(0){it["' + totalExpr + '"].num0}'
     }
 
+    static String percentageExpr(String aggregateAttr, String rootAttr) {
+        '=Math.round(node["' + aggregateAttr + '"].num0/map.rootNode["' + rootAttr + '"].num0*10000)/100+\'%\''
+    }
+
     private static void updateSingleNode(Proxy.Node n) {
         /*
         // Removed in favor of automatic node numbering
@@ -28,10 +32,18 @@ class WBSHelper {
         n.text = "=node['Code']+' - '+node['Title']"
         n['Code'] = "=(parent['Code']?:'')+(parent.getChildPosition(node)+1)+'.'"
          */
-        n['Subtask costs'] = aggregateExpr('Total cost')
-        n['Subtask duration'] = aggregateExpr('Total duration')
-        n['Total cost'] = totalExpr('Cost', 'Subtask costs')
-        n['Total duration'] = totalExpr('Duration', 'Subtask duration')
+        n['Work']=n['Work']?:0
+        n['Duration']=n['Duration']?:0
+        n['Cost']=n['Cost']?:0
+        n['Subtask work'] = aggregateExpr('Level work')
+        n['Subtask duration'] = aggregateExpr('Level duration')
+        n['Subtask cost'] = aggregateExpr('Level cost')
+        n['Level work'] = totalExpr('Work', 'Subtask work')
+        n['Level duration'] = totalExpr('Duration', 'Subtask duration')
+        n['Level cost'] = totalExpr('Cost', 'Subtask cost')
+        n['% Total work'] = percentageExpr('Level work', 'Total work')
+        n['% Total duration'] = percentageExpr('Level duration', 'Total duration')
+        n['% Total cost'] = percentageExpr('Level cost', 'Total cost')
     }
 
     static void initWBS(Proxy.Node n) {
@@ -50,10 +62,15 @@ class WBSHelper {
             n.attributes.removeAll('Title')
         }
          */
-        n.attributes.removeAll('Subtask costs')
-        n.attributes.removeAll('Total cost')
+        n.attributes.removeAll('Subtask work')
         n.attributes.removeAll('Subtask duration')
-        n.attributes.removeAll('Total duration')
+        n.attributes.removeAll('Subtask costs')
+        n.attributes.removeAll('Level work')
+        n.attributes.removeAll('Level duration')
+        n.attributes.removeAll('Level cost')
+        n.attributes.removeAll('% Total work')
+        n.attributes.removeAll('% Total duration')
+        n.attributes.removeAll('% Total cost')
         n.children.each {
             removeWBS(it)
         }
@@ -63,8 +80,9 @@ class WBSHelper {
     private static void showDialog(Proxy.Node n, boolean edit) {
         def mainFrame
         JTextField titleField
-        JTextField costField
+        JTextField workField
         JTextField durationField
+        JTextField costField
         JButton doneButton
         SwingBuilder.edtBuilder {
             mainFrame = dialog(
@@ -81,15 +99,21 @@ class WBSHelper {
                     titleField = textField(preferredSize: new Dimension(400, 25),
                             constraints: gbc(gridx: 1, gridy: 0, gridwidth: REMAINDER, fill: HORIZONTAL))
 
-                    label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.cost"),
+
+                    label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.work"),
                             constraints: gbc(gridx: 0, gridy: 1, ipadx: 5, fill: HORIZONTAL))
-                    costField = textField(preferredSize: new Dimension(300, 25),
+                    workField = textField(preferredSize: new Dimension(300, 25),
                             constraints: gbc(gridx: 1, gridy: 1, gridwidth: REMAINDER, fill: HORIZONTAL))
 
                     label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.duration"),
                             constraints: gbc(gridx: 0, gridy: 2, ipadx: 5, fill: HORIZONTAL))
                     durationField = textField(preferredSize: new Dimension(300, 25),
                             constraints: gbc(gridx: 1, gridy: 2, gridwidth: REMAINDER, fill: HORIZONTAL))
+
+                    label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.cost"),
+                            constraints: gbc(gridx: 0, gridy: 3, ipadx: 5, fill: HORIZONTAL))
+                    costField = textField(preferredSize: new Dimension(300, 25),
+                            constraints: gbc(gridx: 1, gridy: 3, gridwidth: REMAINDER, fill: HORIZONTAL))
                 }
 
                 panel() {
@@ -103,8 +127,9 @@ class WBSHelper {
                             actionPerformed: {
                                 // in OK button handler
                                 def title = titleField.text
-                                def cost = costField.text
+                                def work = workField.text
                                 def duration = durationField.text
+                                def cost = costField.text
                                 def toUpdate
                                 if (edit) {
                                     toUpdate = n
@@ -114,8 +139,9 @@ class WBSHelper {
                                 // Removed in favor of automatic node numbering
                                 //toUpdate['Title'] = title
                                 toUpdate.text = title
-                                toUpdate['Cost'] = cost
+                                toUpdate['Work'] = work
                                 toUpdate['Duration'] = duration
+                                toUpdate['Cost'] = cost
                                 updateSingleNode(toUpdate)
                                 mainFrame.setVisible(false)
                                 mainFrame.dispose()
@@ -141,8 +167,9 @@ class WBSHelper {
             // Removed in favor of automatic node numbering
             // titleField.text = n['Title'] ?: n.text
             titleField.text = n.text
-            costField.text = n['Cost'] ?: 0
+            workField.text = n['Work'] ?: 0
             durationField.text = n['Duration'] ?: 0
+            costField.text = n['Cost'] ?: 0
         }
         // show dialog window
         mainFrame.pack()
