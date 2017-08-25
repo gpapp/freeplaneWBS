@@ -2,4 +2,4 @@
 
 import hu.itsphere.freeplanewbs.WBSHelper
 
-WBSHelper.editTask(node)
+WBSHelper.editTask(node, config)

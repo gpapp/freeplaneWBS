@@ -2,4 +2,4 @@
 
 import hu.itsphere.freeplanewbs.WBSHelper
 
-WBSHelper.createTask(node)
+WBSHelper.createTask(node, config)

@@ -18,7 +18,7 @@
     <attribute_name VISIBLE="true" NAME="Work"/>
 </attribute_registry>
 <node TEXT="Project - Project name" FOLDED="false" ID="ID_1742037183" CREATED="1503403671829" MODIFIED="1503598880026"><hook NAME="MapStyle">
-    <properties fit_to_viewport="false;" show_icon_for_attributes="false" show_note_icons="true"/>
+    <properties show_icon_for_attributes="false" fit_to_viewport="false;" show_note_icons="true"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -39,7 +39,7 @@
 </stylenode>
 </stylenode>
 <stylenode LOCALIZED_TEXT="styles.user-defined" POSITION="right" STYLE="bubble">
-<stylenode TEXT="Help" COLOR="#0099ff" STYLE="fork" SHAPE_HORIZONTAL_MARGIN="0.0 pt" SHAPE_VERTICAL_MARGIN="3.0 pt">
+<stylenode TEXT="Help" COLOR="#0099ff" STYLE="fork" SHAPE_HORIZONTAL_MARGIN="0.0 pt" SHAPE_VERTICAL_MARGIN="3.0 pt" NUMBERED="false">
 <font SIZE="12"/>
 <edge COLOR="#0099ff"/>
 </stylenode>
@@ -79,12 +79,12 @@
 <attribute NAME="Total duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Total cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
-<node TEXT="Level 1 task 1" FOLDED="true" POSITION="right" ID="ID_786711536" CREATED="1503403749023" MODIFIED="1503598876928">
+<node TEXT="Level 1 task 1" FOLDED="true" POSITION="right" ID="ID_786711536" CREATED="1503403749023" MODIFIED="1503676765302">
 <attribute_layout NAME_WIDTH="61.49999816715723 pt" VALUE_WIDTH="61.49999816715723 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
-<attribute NAME="Work" VALUE="20" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;20|number:decimal:#0.####"/>
+<attribute NAME="Work" VALUE="20" OBJECT="org.freeplane.features.format.FormattedNumber|20|#0.####"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
 <attribute NAME="Subtask duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Level work" VALUE="=node[&quot;Work&quot;].num0+node[&quot;Subtask work&quot;].num0"/>
@@ -93,10 +93,10 @@
 <attribute NAME="% Total work" VALUE="=Math.round(node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
-<node TEXT="Level 2 task" ID="ID_919984244" CREATED="1503403749023" MODIFIED="1503596902317">
+<node TEXT="Level 2 task" ID="ID_919984244" CREATED="1503403749023" MODIFIED="1503676805444">
 <attribute_layout NAME_WIDTH="61.49999816715723 pt" VALUE_WIDTH="61.49999816715723 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="80" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;80|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="80" OBJECT="org.freeplane.features.format.FormattedNumber|80|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -107,10 +107,10 @@
 <attribute NAME="% Total work" VALUE="=Math.round(node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
-<node TEXT="Level 3 task" ID="ID_766819258" CREATED="1503403749023" MODIFIED="1503422260470">
+<node TEXT="Level 3 task" ID="ID_766819258" CREATED="1503403749023" MODIFIED="1503676850093">
 <attribute_layout NAME_WIDTH="61.49999816715723 pt" VALUE_WIDTH="61.49999816715723 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -121,10 +121,10 @@
 <attribute NAME="% Total work" VALUE="=Math.round(node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
-<node TEXT="Level 4 task" ID="ID_420070880" CREATED="1503403749023" MODIFIED="1503422260517">
+<node TEXT="Level 4 task" ID="ID_420070880" CREATED="1503403749023" MODIFIED="1503676918464">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -136,12 +136,12 @@
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
-<node TEXT="Level 4 task" ID="ID_1228326839" CREATED="1503403749023" MODIFIED="1503598926951">
+<node TEXT="Level 4 task" ID="ID_1228326839" CREATED="1503403749023" MODIFIED="1503676877592">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
-<attribute NAME="Work" VALUE="40" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;40|number:decimal:#0.####"/>
+<attribute NAME="Work" VALUE="40" OBJECT="org.freeplane.features.format.FormattedNumber|40|#0.####"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
 <attribute NAME="Subtask duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Level work" VALUE="=node[&quot;Work&quot;].num0+node[&quot;Subtask work&quot;].num0"/>
@@ -151,10 +151,10 @@
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
-<node TEXT="Level 4 task" ID="ID_987568402" CREATED="1503403749023" MODIFIED="1503422260613">
+<node TEXT="Level 4 task" ID="ID_987568402" CREATED="1503403749023" MODIFIED="1503676894338">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -167,10 +167,10 @@
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
 </node>
-<node TEXT="Level 3 task" ID="ID_300798353" CREATED="1503403749023" MODIFIED="1503422260663">
+<node TEXT="Level 3 task" ID="ID_300798353" CREATED="1503403749023" MODIFIED="1503676932210">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="120" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;120|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="120" OBJECT="org.freeplane.features.format.FormattedNumber|120|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -183,10 +183,10 @@
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
 </node>
-<node TEXT="Level 2 task" FOLDED="true" ID="ID_576165284" CREATED="1503403749023" MODIFIED="1503596902322">
+<node TEXT="Level 2 task" ID="ID_576165284" CREATED="1503403749023" MODIFIED="1503676951154">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -197,10 +197,10 @@
 <attribute NAME="% Total work" VALUE="=Math.round(node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
-<node TEXT="Level 3 task" ID="ID_300581647" CREATED="1503403749023" MODIFIED="1503422260772">
+<node TEXT="Level 3 task" ID="ID_300581647" CREATED="1503403749023" MODIFIED="1503677007798">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -211,10 +211,10 @@
 <attribute NAME="% Total work" VALUE="=Math.round(node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
-<node TEXT="Level 4 task" ID="ID_401296255" CREATED="1503403749023" MODIFIED="1503422260838">
+<node TEXT="Level 4 task" ID="ID_401296255" CREATED="1503403749023" MODIFIED="1503676978835">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -226,10 +226,10 @@
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
-<node TEXT="Level 4 task" ID="ID_1057816998" CREATED="1503403749023" MODIFIED="1503422260913">
+<node TEXT="Level 4 task" ID="ID_1057816998" CREATED="1503403749023" MODIFIED="1503676988660">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -241,10 +241,10 @@
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
-<node TEXT="Level 4 task" ID="ID_1264782421" CREATED="1503403749023" MODIFIED="1503422260993">
+<node TEXT="Level 4 task" ID="ID_1264782421" CREATED="1503403749023" MODIFIED="1503676998517">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
 <attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
@@ -257,12 +257,12 @@
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
 </node>
-<node TEXT="Level 3 task" ID="ID_593649984" CREATED="1503403749023" MODIFIED="1503422261071">
+<node TEXT="Level 3 task" ID="ID_593649984" CREATED="1503403749023" MODIFIED="1503677030278">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
-<attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
+<attribute NAME="Work" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50|#0.####"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
 <attribute NAME="Subtask duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Level work" VALUE="=node[&quot;Work&quot;].num0+node[&quot;Subtask work&quot;].num0"/>
@@ -272,12 +272,12 @@
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
 </node>
-<node TEXT="Level 3 task" ID="ID_423827550" CREATED="1503403749023" MODIFIED="1503422261137">
+<node TEXT="Level 3 task" ID="ID_423827550" CREATED="1503403749023" MODIFIED="1503677052939">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Duration" VALUE="80" OBJECT="org.freeplane.features.format.FormattedNumber|80|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
-<attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
+<attribute NAME="Work" VALUE="75" OBJECT="org.freeplane.features.format.FormattedNumber|75|#0.####"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
 <attribute NAME="Subtask duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Level work" VALUE="=node[&quot;Work&quot;].num0+node[&quot;Subtask work&quot;].num0"/>
@@ -289,11 +289,11 @@
 </node>
 </node>
 </node>
-<node TEXT="Level 1 task 2" FOLDED="true" POSITION="right" ID="ID_1509581380" CREATED="1503408072520" MODIFIED="1503598915484" NUMBERED="true">
-<attribute NAME="Cost" VALUE="250" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;250|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;10|number:decimal:#0.####"/>
+<node TEXT="Level 1 task 2" FOLDED="true" POSITION="right" ID="ID_1509581380" CREATED="1503408072520" MODIFIED="1503677117392" NUMBERED="true">
+<attribute NAME="Cost" VALUE="250" OBJECT="org.freeplane.features.format.FormattedNumber|250|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
-<attribute NAME="Work" VALUE="50" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;50|number:decimal:#0.####"/>
+<attribute NAME="Work" VALUE="50" OBJECT="org.freeplane.features.format.FormattedNumber|50|#0.####"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
 <attribute NAME="Subtask duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Level work" VALUE="=node[&quot;Work&quot;].num0+node[&quot;Subtask work&quot;].num0"/>
@@ -302,11 +302,11 @@
 <attribute NAME="% Total work" VALUE="=Math.round(node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total duration" VALUE="=Math.round(node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0*10000)/100+&apos;%&apos;"/>
 <attribute NAME="% Total cost" VALUE="=Math.round(node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0*10000)/100+&apos;%&apos;"/>
-<node TEXT="Level 2 task example" ID="ID_851201007" CREATED="1503419196608" MODIFIED="1503598878424">
-<attribute NAME="Cost" VALUE="72" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;72|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="84" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;84|number:decimal:#0.####"/>
+<node TEXT="Level 2 task example" ID="ID_851201007" CREATED="1503419196608" MODIFIED="1503677096158">
+<attribute NAME="Cost" VALUE="72" OBJECT="org.freeplane.features.format.FormattedNumber|72|#0.####"/>
+<attribute NAME="Duration" VALUE="84" OBJECT="org.freeplane.features.format.FormattedNumber|84|#0.####"/>
 <attribute NAME="Subtask cost" VALUE="=children.sum(0){it[&quot;Level cost&quot;].num0}"/>
-<attribute NAME="Work" VALUE="0" OBJECT="org.freeplane.features.format.FormattedNumber|0"/>
+<attribute NAME="Work" VALUE="56" OBJECT="org.freeplane.features.format.FormattedNumber|56|#0.####"/>
 <attribute NAME="Subtask work" VALUE="=children.sum(0){it[&quot;Level work&quot;].num0}"/>
 <attribute NAME="Subtask duration" VALUE="=children.sum(0){it[&quot;Level duration&quot;].num0}"/>
 <attribute NAME="Level work" VALUE="=node[&quot;Work&quot;].num0+node[&quot;Subtask work&quot;].num0"/>

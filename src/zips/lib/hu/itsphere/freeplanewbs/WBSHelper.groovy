@@ -3,6 +3,7 @@ package hu.itsphere.freeplanewbs
 import groovy.swing.SwingBuilder
 import org.freeplane.core.ui.components.UITools
 import org.freeplane.core.util.TextUtils
+import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 import org.freeplane.plugin.script.proxy.Proxy
 
 import javax.swing.*
@@ -23,45 +24,31 @@ class WBSHelper {
         '=Math.round(node["' + aggregateAttr + '"].num0/map.rootNode["' + rootAttr + '"].num0*10000)/100+\'%\''
     }
 
-    private static void updateSingleNode(Proxy.Node n) {
-        /*
-        // Removed in favor of automatic node numbering
-        if (!n['Title']) {
-            n['Title'] = n.text
-        }
-        n.text = "=node['Code']+' - '+node['Title']"
-        n['Code'] = "=(parent['Code']?:'')+(parent.getChildPosition(node)+1)+'.'"
-         */
-        n['Work']=n['Work']?:0
-        n['Duration']=n['Duration']?:0
-        n['Cost']=n['Cost']?:0
+    private static void updateSingleNode(Proxy.Node n, ConfigProperties config) {
+        n['Work'] = n['Work'] ?: 0
+        n['Duration'] = n['Duration'] ?: 0
+        n['Cost'] = n['Cost'] ?: 0
         n['Subtask work'] = aggregateExpr('Level work')
         n['Subtask duration'] = aggregateExpr('Level duration')
         n['Subtask cost'] = aggregateExpr('Level cost')
         n['Level work'] = totalExpr('Work', 'Subtask work')
         n['Level duration'] = totalExpr('Duration', 'Subtask duration')
         n['Level cost'] = totalExpr('Cost', 'Subtask cost')
-        n['% Total work'] = percentageExpr('Level work', 'Total work')
-        n['% Total duration'] = percentageExpr('Level duration', 'Total duration')
-        n['% Total cost'] = percentageExpr('Level cost', 'Total cost')
+        if (config.getBooleanProperty('freeplaneWBS.generate.totals')) {
+            n['% Total work'] = percentageExpr('Level work', 'Total work')
+            n['% Total duration'] = percentageExpr('Level duration', 'Total duration')
+            n['% Total cost'] = percentageExpr('Level cost', 'Total cost')
+        }
     }
 
-    static void initWBS(Proxy.Node n) {
-        updateSingleNode(n)
+    static void initWBS(Proxy.Node n, ConfigProperties config) {
+        updateSingleNode(n, config)
         n.children.each {
-            initWBS(it)
+            initWBS(it, config)
         }
     }
 
     static void removeWBS(Proxy.Node n) {
-        /*
-         // Removed in favor of automatic node numbering
-        n.attributes.removeAll('Code')
-        if (n['Title']) {
-            n.text = n['Title']
-            n.attributes.removeAll('Title')
-        }
-         */
         n.attributes.removeAll('Subtask work')
         n.attributes.removeAll('Subtask duration')
         n.attributes.removeAll('Subtask costs')
@@ -77,7 +64,7 @@ class WBSHelper {
     }
 
 
-    private static void showDialog(Proxy.Node n, boolean edit) {
+    private static void showDialog(Proxy.Node n, boolean edit, ConfigProperties config) {
         def mainFrame
         JTextField titleField
         JTextField workField
@@ -136,13 +123,11 @@ class WBSHelper {
                                 } else {
                                     toUpdate = n.createChild()
                                 }
-                                // Removed in favor of automatic node numbering
-                                //toUpdate['Title'] = title
                                 toUpdate.text = title
                                 toUpdate['Work'] = work
                                 toUpdate['Duration'] = duration
                                 toUpdate['Cost'] = cost
-                                updateSingleNode(toUpdate)
+                                updateSingleNode(toUpdate, config)
                                 mainFrame.setVisible(false)
                                 mainFrame.dispose()
                             })
@@ -164,8 +149,6 @@ class WBSHelper {
                 })
         if (edit) {
             // fill dialog window with current nodedata
-            // Removed in favor of automatic node numbering
-            // titleField.text = n['Title'] ?: n.text
             titleField.text = n.text
             workField.text = n['Work'] ?: 0
             durationField.text = n['Duration'] ?: 0
@@ -177,11 +160,11 @@ class WBSHelper {
         mainFrame.setVisible(true)
     }
 
-    static def createTask(Proxy.Node n) {
-        showDialog(n, false)
+    static def createTask(Proxy.Node n, ConfigProperties config) {
+        showDialog(n, false, config)
     }
 
-    static def editTask(Proxy.Node n) {
-        showDialog(n, true)
+    static def editTask(Proxy.Node n, ConfigProperties config) {
+        showDialog(n, true, config)
     }
 }
