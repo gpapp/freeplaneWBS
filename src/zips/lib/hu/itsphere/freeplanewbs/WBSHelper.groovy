@@ -3,6 +3,8 @@ package hu.itsphere.freeplanewbs
 import groovy.swing.SwingBuilder
 import org.freeplane.core.ui.components.UITools
 import org.freeplane.core.util.TextUtils
+import org.freeplane.features.format.FormatController
+import org.freeplane.features.format.FormattedFormula
 import org.freeplane.plugin.script.FreeplaneScriptBaseClass.ConfigProperties
 import org.freeplane.plugin.script.proxy.Proxy
 
@@ -12,35 +14,71 @@ import java.awt.event.ActionEvent
 import java.awt.event.KeyEvent
 
 class WBSHelper {
-    static String totalExpr(String localAttr, String aggregateAttr) {
-        '=node["' + localAttr + '"].num0+node["' + aggregateAttr + '"].num0'
+    public static final java.util.List<String> ATTRIBUTES = ['work', 'duration', 'cost']
+
+    static FormattedFormula aggregateExpr(String attr) {
+        new FormattedFormula('=children.size()>0?' +
+                'children.sum(0){it[\'Level ' + attr + '\'].num0}:' +
+                'node[\'' + attr.capitalize() + '\'].num0', "#0.####")
     }
 
-    static String aggregateExpr(String totalExpr) {
-        '=children.sum(0){it["' + totalExpr + '"].num0}'
+    static FormattedFormula percentageExpr(String attr) {
+        new FormattedFormula('=map.rootNode["Total work"].num0==0?' +
+                '\'Error\':' +
+                'node["Level ' + attr + '"].num0/map.rootNode["Total ' + attr + '"].num0'
+                , "#0.## %")
     }
 
-    static String percentageExpr(String aggregateAttr, String rootAttr) {
-        '=Math.round(node["' + aggregateAttr + '"].num0/map.rootNode["' + rootAttr + '"].num0*10000)/100+\'%\''
-    }
+    /**
+     * Cleans all aggregate attributes from a node and adds the appropriate
+     * attributes according to the current config
+     * @param n
+     * @param config
+     */
+    private static void cleanSingleNode(Proxy.Node n) {
+        ATTRIBUTES.each {
+            // for compatibility with v1.1 and below
+            n.attributes.removeAll('Subtask ' + it)
 
-    private static void updateSingleNode(Proxy.Node n, ConfigProperties config) {
-        n['Work'] = n['Work'] ?: 0
-        n['Duration'] = n['Duration'] ?: 0
-        n['Cost'] = n['Cost'] ?: 0
-        n['Subtask work'] = aggregateExpr('Level work')
-        n['Subtask duration'] = aggregateExpr('Level duration')
-        n['Subtask cost'] = aggregateExpr('Level cost')
-        n['Level work'] = totalExpr('Work', 'Subtask work')
-        n['Level duration'] = totalExpr('Duration', 'Subtask duration')
-        n['Level cost'] = totalExpr('Cost', 'Subtask cost')
-        if (config.getBooleanProperty('freeplaneWBS.generate.totals')) {
-            n['% Total work'] = percentageExpr('Level work', 'Total work')
-            n['% Total duration'] = percentageExpr('Level duration', 'Total duration')
-            n['% Total cost'] = percentageExpr('Level cost', 'Total cost')
+            n.attributes.removeAll('Level ' + it)
+            n.attributes.removeAll('% Total ' + it)
         }
     }
 
+    /**
+     * Cleans all aggregate attributes from a node and adds the appropriate
+     * attributes according to the current config
+     * @param n
+     * @param config
+     */
+    private static void updateSingleNode(Proxy.Node n, ConfigProperties config) {
+        cleanSingleNode(n)
+        if (n.children.empty) {
+            ATTRIBUTES.each {
+                if (!n[it.capitalize()]) {
+                    n[it.capitalize()] = createFormattedValue('0')
+                }
+            }
+        } else {
+            ATTRIBUTES.each {
+                n.attributes.removeAll(it.capitalize())
+            }
+        }
+        ATTRIBUTES.each {
+            n['Level ' + it] = aggregateExpr(it)
+        }
+        if (config.getBooleanProperty('freeplaneWBS.generate.totals')) {
+            ATTRIBUTES.each {
+                n['% Total ' + it] = percentageExpr(it)
+            }
+        }
+    }
+
+    /**
+     * Initialize the aggregates under a specific node recursively
+     * @param n
+     * @param config
+     */
     static void initWBS(Proxy.Node n, ConfigProperties config) {
         updateSingleNode(n, config)
         n.children.each {
@@ -49,15 +87,7 @@ class WBSHelper {
     }
 
     static void removeWBS(Proxy.Node n) {
-        n.attributes.removeAll('Subtask work')
-        n.attributes.removeAll('Subtask duration')
-        n.attributes.removeAll('Subtask costs')
-        n.attributes.removeAll('Level work')
-        n.attributes.removeAll('Level duration')
-        n.attributes.removeAll('Level cost')
-        n.attributes.removeAll('% Total work')
-        n.attributes.removeAll('% Total duration')
-        n.attributes.removeAll('% Total cost')
+        cleanSingleNode(n)
         n.children.each {
             removeWBS(it)
         }
@@ -113,20 +143,17 @@ class WBSHelper {
                     doneButton = button(id: 'doneButton', text: TextUtils.getText("addon.freeplaneWBS.taskeditor.done"),
                             actionPerformed: {
                                 // in OK button handler
-                                def title = titleField.text
-                                def work = workField.text
-                                def duration = durationField.text
-                                def cost = costField.text
                                 def toUpdate
                                 if (edit) {
                                     toUpdate = n
                                 } else {
+                                    removeLeafAttributes(n)
                                     toUpdate = n.createChild()
                                 }
-                                toUpdate.text = title
-                                toUpdate['Work'] = work
-                                toUpdate['Duration'] = duration
-                                toUpdate['Cost'] = cost
+                                toUpdate.text = titleField.text
+                                toUpdate['Work'] = createFormattedValue(workField.text)
+                                toUpdate['Duration'] = createFormattedValue(durationField.text)
+                                toUpdate['Cost'] = createFormattedValue(costField.text)
                                 updateSingleNode(toUpdate, config)
                                 mainFrame.setVisible(false)
                                 mainFrame.dispose()
@@ -160,11 +187,24 @@ class WBSHelper {
         mainFrame.setVisible(true)
     }
 
-    static def createTask(Proxy.Node n, ConfigProperties config) {
+    private static def createFormattedValue(value) {
+        try {
+            return FormatController.format(Integer.parseInt(value), '#0.####')
+        } catch (NumberFormatException nfe) {
+            return FormatController.format('Invalid value:' + value, "#")
+        }
+    }
+
+    static void removeLeafAttributes(Proxy.Node n) {
+        ATTRIBUTES.each { n.attributes.removeAll(it.capitalize()) }
+    }
+
+
+    static void createTask(Proxy.Node n, ConfigProperties config) {
         showDialog(n, false, config)
     }
 
-    static def editTask(Proxy.Node n, ConfigProperties config) {
+    static void editTask(Proxy.Node n, ConfigProperties config) {
         showDialog(n, true, config)
     }
 }

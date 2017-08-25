@@ -3,7 +3,7 @@
 <node TEXT="WBS" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1503678650687" LINK="https://www.itworks.hu/portfolio/freeplane-wbs/" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="MapStyle">
-    <properties fit_to_viewport="false;" show_icon_for_attributes="true" show_note_icons="true"/>
+    <properties show_icon_for_attributes="true" fit_to_viewport="false;" show_note_icons="true"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -102,7 +102,7 @@
 </html>
 </richcontent>
 <edge COLOR="#999999"/>
-<node TEXT="description" POSITION="left" ID="ID_1125389651" CREATED="1323057303632" MODIFIED="1503424688513">
+<node TEXT="description" POSITION="left" ID="ID_1125389651" CREATED="1323057303632" MODIFIED="1503692928967">
 <edge COLOR="#999999" WIDTH="3"/>
 <richcontent TYPE="NOTE">
 
@@ -123,7 +123,7 @@
   </body>
 </html>
 </richcontent>
-<node TEXT="Freeplane WBS is a helper tool for creating work breakdown structures and exporting them as tables to be used in the project management tool of one&#x2019;s liking." ID="ID_833172562" CREATED="1323057648210" MODIFIED="1503402545689" BACKGROUND_COLOR="#ffff99">
+<node TEXT="Freeplane WBS is a helper tool for creating work breakdown structures and exporting them as tables to be used in the project management tool of one&#x2019;s liking." ID="ID_833172562" CREATED="1323057648210" MODIFIED="1503692928963" BACKGROUND_COLOR="#ffff99">
 <edge COLOR="#999999"/>
 </node>
 </node>
