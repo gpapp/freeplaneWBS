@@ -11,7 +11,7 @@
     <attribute_name VISIBLE="true" NAME="Total duration"/>
     <attribute_name VISIBLE="true" NAME="Total work"/>
 </attribute_registry>
-<node TEXT="Project - Project name" FOLDED="false" ID="ID_1742037183" CREATED="1503403671829" MODIFIED="1503690066967"><hook NAME="MapStyle">
+<node TEXT="Project - Project name" FOLDED="false" ID="ID_1742037183" CREATED="1503403671829" MODIFIED="1503728946281"><hook NAME="MapStyle">
     <conditional_styles>
         <conditional_style ACTIVE="true" STYLE_REF="Leaf" LAST="true">
             <attribute_exists_condition ATTRIBUTE="Cost"/>
@@ -20,7 +20,7 @@
             <attribute_exists_condition ATTRIBUTE="Level cost"/>
         </conditional_style>
     </conditional_styles>
-    <properties fit_to_viewport="false;" show_icon_for_attributes="false" show_note_icons="true"/>
+    <properties show_icon_for_attributes="false" fit_to_viewport="false;" show_note_icons="true"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -87,7 +87,7 @@
 <attribute NAME="Total duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Total cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties" VALUE="ALL"/>
-<node TEXT="Level 1 task 1" FOLDED="true" POSITION="right" ID="ID_786711536" CREATED="1503403749023" MODIFIED="1503690201077">
+<node TEXT="Level 1 task 1" POSITION="right" ID="ID_786711536" CREATED="1503403749023" MODIFIED="1503728946291">
 <attribute_layout NAME_WIDTH="61.49999816715723 pt" VALUE_WIDTH="61.49999816715723 pt"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
@@ -95,7 +95,7 @@
 <attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-<node TEXT="Level 2 task" ID="ID_919984244" CREATED="1503403749023" MODIFIED="1503690202237">
+<node TEXT="Level 2 task" ID="ID_919984244" CREATED="1503403749023" MODIFIED="1503728946302">
 <attribute_layout NAME_WIDTH="61.49999816715723 pt" VALUE_WIDTH="61.49999816715723 pt"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
@@ -103,7 +103,7 @@
 <attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-<node TEXT="Level 3 task" ID="ID_766819258" CREATED="1503403749023" MODIFIED="1503690203205">
+<node TEXT="Level 3 task" ID="ID_766819258" CREATED="1503403749023" MODIFIED="1503728946285">
 <attribute_layout NAME_WIDTH="61.49999816715723 pt" VALUE_WIDTH="61.49999816715723 pt"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
@@ -111,11 +111,11 @@
 <attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-<node TEXT="Level 4 task" ID="ID_420070880" CREATED="1503403749023" MODIFIED="1503692738499">
+<node TEXT="Level 4 task" ID="ID_420070880" CREATED="1503403749023" MODIFIED="1503728946288">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="57" OBJECT="org.freeplane.features.format.FormattedNumber|57|#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Work" VALUE="45" OBJECT="org.freeplane.features.format.FormattedNumber|45|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
+<attribute NAME="Cost" VALUE="57" OBJECT="org.freeplane.features.format.FormattedNumber|57|#0.####"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
@@ -123,23 +123,23 @@
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
 </node>
-<node TEXT="Level 4 task" ID="ID_1228326839" CREATED="1503403749023" MODIFIED="1503692753624">
+<node TEXT="Level 4 task" ID="ID_1228326839" CREATED="1503403749023" MODIFIED="1503728946303">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Work" VALUE="40" OBJECT="org.freeplane.features.format.FormattedNumber|40|#0.####"/>
-<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
-<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
-<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
-<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
-<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
-<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-</node>
-<node TEXT="Level 4 task" ID="ID_987568402" CREATED="1503403749023" MODIFIED="1503692770227">
-<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
 <attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
+<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
+<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
+<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
+<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
+<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
+<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
+</node>
+<node TEXT="Level 4 task" ID="ID_987568402" CREATED="1503403749023" MODIFIED="1503728946304">
+<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
 <attribute NAME="Work" VALUE="7" OBJECT="org.freeplane.features.format.FormattedNumber|7|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
@@ -148,11 +148,11 @@
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
 </node>
 </node>
-<node TEXT="Level 3 task" ID="ID_300798353" CREATED="1503403749023" MODIFIED="1503692791432">
+<node TEXT="Level 3 task" ID="ID_300798353" CREATED="1503403749023" MODIFIED="1503728946308">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="120" OBJECT="org.freeplane.features.format.FormattedNumber|120|#0.####"/>
-<attribute NAME="Duration" VALUE="12" OBJECT="org.freeplane.features.format.FormattedNumber|12|#0.####"/>
 <attribute NAME="Work" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
+<attribute NAME="Duration" VALUE="12" OBJECT="org.freeplane.features.format.FormattedNumber|12|#0.####"/>
+<attribute NAME="Cost" VALUE="120" OBJECT="org.freeplane.features.format.FormattedNumber|120|#0.####"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
@@ -161,7 +161,7 @@
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
 </node>
 </node>
-<node TEXT="Level 2 task" ID="ID_576165284" CREATED="1503403749023" MODIFIED="1503690207289">
+<node TEXT="Level 2 task" ID="ID_576165284" CREATED="1503403749023" MODIFIED="1503728946305">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
@@ -169,7 +169,7 @@
 <attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-<node TEXT="Level 3 task" ID="ID_300581647" CREATED="1503403749023" MODIFIED="1503690208119">
+<node TEXT="Level 3 task" ID="ID_300581647" CREATED="1503403749023" MODIFIED="1503728946306">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
@@ -177,48 +177,23 @@
 <attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-<node TEXT="Level 4 task" ID="ID_401296255" CREATED="1503403749023" MODIFIED="1503692291284">
+<node TEXT="Level 4 task" ID="ID_401296255" CREATED="1503403749023" MODIFIED="1503728946298">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Work" VALUE="5" OBJECT="org.freeplane.features.format.FormattedNumber|5|#0.####"/>
-<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
-<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
-<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
-<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
-<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
-<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-</node>
-<node TEXT="Level 4 task" ID="ID_1057816998" CREATED="1503403749023" MODIFIED="1503692316430">
-<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
 <attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
-<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
+<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
+<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
+<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
+<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
+<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
+<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
+</node>
+<node TEXT="Level 4 task" ID="ID_1057816998" CREATED="1503403749023" MODIFIED="1503728946304">
+<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
 <attribute NAME="Work" VALUE="7" OBJECT="org.freeplane.features.format.FormattedNumber|7|#0.####"/>
-<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
-<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
-<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
-<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
-<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
-<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-</node>
-<node TEXT="Level 4 task" ID="ID_1264782421" CREATED="1503403749023" MODIFIED="1503692653929">
-<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="150" OBJECT="org.freeplane.features.format.FormattedNumber|150|#0.####"/>
-<attribute NAME="Duration" VALUE="25" OBJECT="org.freeplane.features.format.FormattedNumber|25|#0.####"/>
-<attribute NAME="Work" VALUE="14" OBJECT="org.freeplane.features.format.FormattedNumber|14|#0.####"/>
-<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
-<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
-<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
-<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
-<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
-<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-</node>
-</node>
-<node TEXT="Level 3 task" ID="ID_593649984" CREATED="1503403749023" MODIFIED="1503692709368">
-<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="75" OBJECT="org.freeplane.features.format.FormattedNumber|75|#0.####"/>
 <attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
-<attribute NAME="Work" VALUE="34" OBJECT="org.freeplane.features.format.FormattedNumber|34|#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
@@ -226,11 +201,36 @@
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
 </node>
-<node TEXT="Level 3 task" ID="ID_423827550" CREATED="1503403749023" MODIFIED="1503690212156">
+<node TEXT="Level 4 task" ID="ID_1264782421" CREATED="1503403749023" MODIFIED="1503728946294">
 <attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
-<attribute NAME="Cost" VALUE="org.freeplane.plugin.script.proxy.ConvertibleText|org.freeplane.plugin.script.proxy.ConvertibleNumber|100" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;100|number:decimal:#0.####"/>
-<attribute NAME="Duration" VALUE="org.freeplane.plugin.script.proxy.ConvertibleText|org.freeplane.plugin.script.proxy.ConvertibleNumber|80" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;80|number:decimal:#0.####"/>
-<attribute NAME="Work" VALUE="org.freeplane.plugin.script.proxy.ConvertibleText|org.freeplane.plugin.script.proxy.ConvertibleNumber|75" OBJECT="org.freeplane.features.format.FormattedObject|org.freeplane.plugin.script.proxy.ConvertibleText&amp;#x7c;org.freeplane.plugin.script.proxy.ConvertibleNumber&amp;#x7c;75|number:decimal:#0.####"/>
+<attribute NAME="Work" VALUE="14" OBJECT="org.freeplane.features.format.FormattedNumber|14|#0.####"/>
+<attribute NAME="Duration" VALUE="25" OBJECT="org.freeplane.features.format.FormattedNumber|25|#0.####"/>
+<attribute NAME="Cost" VALUE="150" OBJECT="org.freeplane.features.format.FormattedNumber|150|#0.####"/>
+<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
+<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
+<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
+<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
+<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
+<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
+</node>
+</node>
+<node TEXT="Level 3 task" ID="ID_593649984" CREATED="1503403749023" MODIFIED="1503728946285">
+<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
+<attribute NAME="Work" VALUE="34" OBJECT="org.freeplane.features.format.FormattedNumber|34|#0.####"/>
+<attribute NAME="Duration" VALUE="10" OBJECT="org.freeplane.features.format.FormattedNumber|10|#0.####"/>
+<attribute NAME="Cost" VALUE="75" OBJECT="org.freeplane.features.format.FormattedNumber|75|#0.####"/>
+<attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
+<attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
+<attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
+<attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
+<attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
+<attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
+</node>
+<node TEXT="ho" ID="ID_423827550" CREATED="1503403749023" MODIFIED="1503728946300">
+<attribute_layout NAME_WIDTH="89.99999731779107 pt"/>
+<attribute NAME="Work" VALUE="75" OBJECT="org.freeplane.features.format.FormattedNumber|75|#0.####"/>
+<attribute NAME="Duration" VALUE="80" OBJECT="org.freeplane.features.format.FormattedNumber|80|#0.####"/>
+<attribute NAME="Cost" VALUE="100" OBJECT="org.freeplane.features.format.FormattedNumber|100|#0.####"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
@@ -240,17 +240,17 @@
 </node>
 </node>
 </node>
-<node TEXT="Level 1 task 2" FOLDED="true" POSITION="right" ID="ID_1509581380" CREATED="1503408072520" MODIFIED="1503690212744" NUMBERED="true">
+<node TEXT="Level 1 task 2" POSITION="right" ID="ID_1509581380" CREATED="1503408072520" MODIFIED="1503728946293" NUMBERED="true">
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
 <attribute NAME="% Total work" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level work&quot;].num0/map.rootNode[&quot;Total work&quot;].num0|#0.## %"/>
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
-<node TEXT="Level 2 task example" ID="ID_851201007" CREATED="1503419196608" MODIFIED="1503692831152">
-<attribute NAME="Cost" VALUE="72" OBJECT="org.freeplane.features.format.FormattedNumber|72|#0.####"/>
-<attribute NAME="Duration" VALUE="84" OBJECT="org.freeplane.features.format.FormattedNumber|84|#0.####"/>
+<node TEXT="Level 2 task example" ID="ID_851201007" CREATED="1503419196608" MODIFIED="1503728946301">
 <attribute NAME="Work" VALUE="56" OBJECT="org.freeplane.features.format.FormattedNumber|56|#0.####"/>
+<attribute NAME="Duration" VALUE="84" OBJECT="org.freeplane.features.format.FormattedNumber|84|#0.####"/>
+<attribute NAME="Cost" VALUE="72" OBJECT="org.freeplane.features.format.FormattedNumber|72|#0.####"/>
 <attribute NAME="Level work" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level work&apos;].num0}:node[&apos;Work&apos;].num0|#0.####"/>
 <attribute NAME="Level duration" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level duration&apos;].num0}:node[&apos;Duration&apos;].num0|#0.####"/>
 <attribute NAME="Level cost" VALUE="=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=children.size()&gt;0?children.sum(0){it[&apos;Level cost&apos;].num0}:node[&apos;Cost&apos;].num0|#0.####"/>
@@ -258,7 +258,7 @@
 <attribute NAME="% Total duration" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level duration&quot;].num0/map.rootNode[&quot;Total duration&quot;].num0|#0.## %"/>
 <attribute NAME="% Total cost" VALUE="=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0" OBJECT="org.freeplane.features.format.FormattedFormula|=map.rootNode[&quot;Total work&quot;].num0==0?&apos;Error&apos;:node[&quot;Level cost&quot;].num0/map.rootNode[&quot;Total cost&quot;].num0|#0.## %"/>
 </node>
-<node TEXT="New task" ID="ID_1769657801" CREATED="1503692877251" MODIFIED="1503692878703">
+<node TEXT="New task" ID="ID_1769657801" CREATED="1503692877251" MODIFIED="1503728946299">
 <attribute NAME="Work" VALUE="17" OBJECT="org.freeplane.features.format.FormattedNumber|17|#0.####"/>
 <attribute NAME="Duration" VALUE="32" OBJECT="org.freeplane.features.format.FormattedNumber|32|#0.####"/>
 <attribute NAME="Cost" VALUE="51" OBJECT="org.freeplane.features.format.FormattedNumber|51|#0.####"/>
@@ -288,7 +288,7 @@
 </richcontent>
 <font BOLD="true"/>
 </node>
-<node STYLE_REF="Help" ID="ID_459314897" CREATED="1503418789598" MODIFIED="1503597134529"><richcontent TYPE="NODE">
+<node STYLE_REF="Help" ID="ID_459314897" CREATED="1503418789598" MODIFIED="1503728946295"><richcontent TYPE="NODE">
 
 <html>
   <head>
