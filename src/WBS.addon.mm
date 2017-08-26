@@ -1,9 +1,9 @@
 <map version="freeplane 1.5.9">
 <!--To view this file, download free mind mapping software Freeplane from http://freeplane.sourceforge.net -->
-<node TEXT="WBS" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1503678650687" LINK="https://www.itworks.hu/portfolio/freeplane-wbs/" BACKGROUND_COLOR="#97c7dc">
+<node TEXT="WBS" FOLDED="false" ID="ID_1723255651" CREATED="1283093380553" MODIFIED="1503729071070" LINK="https://www.itworks.hu/portfolio/freeplane-wbs/" BACKGROUND_COLOR="#97c7dc">
 <font SIZE="16" BOLD="true" ITALIC="true"/>
 <hook NAME="MapStyle">
-    <properties show_icon_for_attributes="true" fit_to_viewport="false;" show_note_icons="true"/>
+    <properties fit_to_viewport="false;" show_icon_for_attributes="true" show_note_icons="true"/>
 
 <map_styles>
 <stylenode LOCALIZED_TEXT="styles.root_node" STYLE="oval" UNIFORM_SHAPE="true" VGAP_QUANTITY="24.0 pt">
@@ -58,7 +58,7 @@
 </hook>
 <attribute_layout NAME_WIDTH="129.74999613314878 pt" VALUE_WIDTH="134.24999599903833 pt"/>
 <attribute NAME="name" VALUE="freeplaneWBS"/>
-<attribute NAME="version" VALUE="v1.2.0"/>
+<attribute NAME="version" VALUE="v1.2.1"/>
 <attribute NAME="author" VALUE="Gergely Papp"/>
 <attribute NAME="freeplaneVersionFrom" VALUE="1.5.0"/>
 <attribute NAME="freeplaneVersionTo" VALUE=""/>
@@ -435,12 +435,12 @@
 <attribute NAME="execute_scripts_without_exec_restriction" VALUE="false"/>
 <attribute NAME="execute_scripts_without_network_restriction" VALUE="false"/>
 </node>
-<node TEXT="initWBS.groovy" ID="ID_1647366330" CREATED="1503409090748" MODIFIED="1503409957982">
+<node TEXT="initWBS.groovy" ID="ID_1647366330" CREATED="1503409090748" MODIFIED="1503729081144">
 <attribute_layout NAME_WIDTH="209.24999376386424 pt" VALUE_WIDTH="209.24999376386424 pt"/>
 <attribute NAME="menuTitleKey" VALUE="addon.${name}.initWBS"/>
 <attribute NAME="menuLocation" VALUE="main_menu_scripting/${name}"/>
 <attribute NAME="executionMode" VALUE="on_single_node"/>
-<attribute NAME="keyboardShortcut" VALUE=""/>
+<attribute NAME="keyboardShortcut" VALUE="F8"/>
 <attribute NAME="execute_scripts_without_asking" VALUE="true"/>
 <attribute NAME="execute_scripts_without_file_restriction" VALUE="true"/>
 <attribute NAME="execute_scripts_without_write_restriction" VALUE="false"/>
