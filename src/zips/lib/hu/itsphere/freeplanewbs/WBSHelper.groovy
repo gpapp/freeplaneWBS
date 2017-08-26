@@ -113,23 +113,30 @@ class WBSHelper {
 
                     label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.name"),
                             constraints: gbc(gridx: 0, gridy: 0, ipadx: 5, fill: HORIZONTAL))
-                    titleField = textField(preferredSize: new Dimension(400, 25),
+                    titleField = textField(
+                            preferredSize: new Dimension(400, 25),
                             constraints: gbc(gridx: 1, gridy: 0, gridwidth: REMAINDER, fill: HORIZONTAL))
 
 
                     label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.work"),
                             constraints: gbc(gridx: 0, gridy: 1, ipadx: 5, fill: HORIZONTAL))
-                    workField = textField(preferredSize: new Dimension(300, 25),
+                    workField = textField(
+                            horizontalAlignment: SwingConstants.RIGHT,
+                            preferredSize: new Dimension(300, 25),
                             constraints: gbc(gridx: 1, gridy: 1, gridwidth: REMAINDER, fill: HORIZONTAL))
 
                     label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.duration"),
                             constraints: gbc(gridx: 0, gridy: 2, ipadx: 5, fill: HORIZONTAL))
-                    durationField = textField(preferredSize: new Dimension(300, 25),
+                    durationField = textField(
+                            horizontalAlignment: SwingConstants.RIGHT,
+                            preferredSize: new Dimension(300, 25),
                             constraints: gbc(gridx: 1, gridy: 2, gridwidth: REMAINDER, fill: HORIZONTAL))
 
                     label(text: TextUtils.getText("addon.freeplaneWBS.taskeditor.cost"),
                             constraints: gbc(gridx: 0, gridy: 3, ipadx: 5, fill: HORIZONTAL))
-                    costField = textField(preferredSize: new Dimension(300, 25),
+                    costField = textField(
+                            horizontalAlignment: SwingConstants.RIGHT,
+                            preferredSize: new Dimension(300, 25),
                             constraints: gbc(gridx: 1, gridy: 3, gridwidth: REMAINDER, fill: HORIZONTAL))
                 }
 
@@ -147,7 +154,7 @@ class WBSHelper {
                                 if (edit) {
                                     toUpdate = n
                                 } else {
-                                    removeLeafAttributes(n)
+                                    removeLeafAttributes(n, config)
                                     toUpdate = n.createChild()
                                 }
                                 toUpdate.text = titleField.text
@@ -180,6 +187,10 @@ class WBSHelper {
             workField.text = n['Work'] ?: 0
             durationField.text = n['Duration'] ?: 0
             costField.text = n['Cost'] ?: 0
+        } else {
+            workField.text = 0
+            durationField.text = 0
+            costField.text = 0
         }
         // show dialog window
         mainFrame.pack()
@@ -195,8 +206,9 @@ class WBSHelper {
         }
     }
 
-    static void removeLeafAttributes(Proxy.Node n) {
+    static void removeLeafAttributes(Proxy.Node n, config) {
         ATTRIBUTES.each { n.attributes.removeAll(it.capitalize()) }
+        updateSingleNode(n, config)
     }
 
 

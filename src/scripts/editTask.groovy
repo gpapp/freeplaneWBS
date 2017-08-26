@@ -9,7 +9,7 @@ import javax.swing.*
 if (node.children.empty) {
     WBSHelper.editTask(node, config)
 } else {
-    UITools.showMessage("This is not a leaf WBS task\n(removing stale attibutes, if any)",
+    UITools.showMessage("This is not a leaf WBS task\n(reinitializing attibutes)",
             JOptionPane.WARNING_MESSAGE)
-    WBSHelper.removeLeafAttributes(node)
+    WBSHelper.removeLeafAttributes(node, config)
 }
