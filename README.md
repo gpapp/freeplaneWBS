@@ -15,8 +15,8 @@ Use the hotkey Shift+F7 (or the key you assigned to Tools/WBS/Edit node) to modi
 
 ## How to use the template? 
 * Create a mindmap from the template 
-*  Remove the example nodes 
-*Add your own tasks using the editor 
+* Remove the example nodes 
+* Add your own tasks using the editor 
 * When you are comfortable with the addon, remove the help nodes
 
 ## How to get rid of the calculations? 
